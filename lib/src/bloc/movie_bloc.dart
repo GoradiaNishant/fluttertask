@@ -4,6 +4,7 @@ import 'package:rxdart/rxdart.dart';
 
 
 class MoviesBloc {
+
   final _repository = Repository();
   final _moviesFetcher = PublishSubject<ItemModel>();
 

@@ -24,9 +24,20 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
 
   }
 
+
   @override
   void initState() {
     super.initState();
+
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      if (MediaQuery.of(context).orientation == Orientation.portrait){
+        print("portrait");
+      }else{
+        print("landscape");
+      }
+    });
+
+
     _controller = VideoPlayerController.file(File(widget.filePath))
       ..initialize().then((_) {
         setState(() {
@@ -58,8 +69,18 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
     _controller.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
+    if (MediaQuery.of(context).orientation == Orientation.portrait){
+      setState(() {
+        isfull=false;
+      });
+    }else{
+      setState(() {
+        isfull=true;
+      });
+    }
     return isfull?Scaffold(
       body: Stack(
         children: [

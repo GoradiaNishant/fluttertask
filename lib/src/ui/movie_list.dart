@@ -3,7 +3,6 @@ import 'package:fluttertask/src/bloc/movie_bloc.dart';
 import 'package:fluttertask/src/model/item_model.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
-
 class MovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

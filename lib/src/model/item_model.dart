@@ -4,7 +4,7 @@ class ItemModel {
   late int _total_pages;
   late List<_Result> _results = [];
 
-  ItemModel.fromJson(Map<String, dynamic> parsedJson) {
+  ItemModel.fromJson(Map<dynamic, dynamic> parsedJson) {
     print(parsedJson['results'].length);
     _page = parsedJson['page'];
     _total_results = parsedJson['total_results'];
